@@ -1,16 +1,16 @@
 /*
  * Logan Pulley
  * Jordain Sharma
- * TEST
  */
 public class Table
 {
 	private boolean hasSenior;
 	private int seated;
 	
-	public Table()
+	public Table(boolean senior)
 	{
-		
+		hasSenior = senior;
+		if (hasSenior) seated = 1; else seated = 0;
 	}
 	
 	public boolean getHasSenior()
