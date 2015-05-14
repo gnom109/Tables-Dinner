@@ -9,29 +9,26 @@ public class Dinner
 	public static void main(String[] args)
 	{
 		Scanner steve = new Scanner(System.in);
-		List<Table> tables = new ArrayList<Table>(); // Contains all tables
+		Table[] tables; // Contains all tables
 		int numSeniors, numUnder; // Number of seniors, number of non-seniors
+		int tablesNeeded; // Number of tables needed to seat everyone
 		
 		System.out.print("How many seniors? "); // Gets numSeniors
 		numSeniors = steve.nextInt();
 		System.out.print("How many other students? "); // Gets numUnder
 		numUnder = steve.nextInt();
 		
-		System.out.println("Creating " + numSeniors + " senior tables");
-		for (int i = 0; i < numSeniors; i++) // Creates a table for each senior
+		tablesNeeded += numSeniors; // Counts a table for each senior
+		
+		if (numUnder / 7 > tables.length)
 		{
-			tables.add(new Table(true));
+			tablesNeeded += (numUnder / 7) - tables.length; // Counts more tables as needed for non-seniors
 		}
 		
-		if (numUnder / 7 > tables.size())
+		tables = new Table[tablesNeeded];
+		for (int i = 0; i < tables.length; i++)
 		{
-			System.out.println("Adding " + (numUnder / 7 - tables.size()) + " overflow tables");
-			for (int i = 0; i < (numUnder / 7) - tables.size(); i++) // Creates more tables as needed for non-seniors
-			{
-				tables.add(new Table(false));
-			}
+			if (i < numSeniors) tables[i] = new Table(true); else tables[i] = new Table(false);
 		}
-		
-		
 	}
 }
