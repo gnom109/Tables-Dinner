@@ -5,25 +5,16 @@
  */
 public class Table
 {
-	private boolean hasSenior;
 	private int numSeated;
 	private int openSeats;
 	private int[] seated = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
 	
 	public Table(boolean senior)//Table constructor
 	{
-		hasSenior = senior;
-		if (hasSenior)
+		if (senior)
 		{
-			numSeated = 1;
 			seated[0] = 0;
 		}
-		else numSeated = 0;
-	}
-	
-	public boolean getHasSenior()//Returns hasSenior
-	{
-		return hasSenior;
 	}
 	
 	public int getNumSeated()//Returns numSeated
@@ -44,14 +35,7 @@ public class Table
 	
 	public boolean isSeniorAtTable()//Checks if a senior is present at a table
 	{
-		for(int i = 0; i<seated.length;i++)
-		{
-			if(seated[i] == 0)
-			{
-				return true;
-			}
-		}
-		return false;	
+		if (seated[0] == 0) return true; else return false;
 	}
 	
 	
