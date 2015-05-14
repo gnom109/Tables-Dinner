@@ -7,9 +7,10 @@ public class Table
 {
 	private boolean hasSenior;
 	private int numSeated;
+	private int openSeats;
 	private int[] seated = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
 	
-	public Table(boolean senior)
+	public Table(boolean senior)//Table constructor
 	{
 		hasSenior = senior;
 		if (hasSenior)
@@ -20,14 +21,37 @@ public class Table
 		else numSeated = 0;
 	}
 	
-	public boolean getHasSenior()
+	public boolean getHasSenior()//Returns hasSenior
 	{
 		return hasSenior;
 	}
 	
-	public int getNumSeated()
+	public int getNumSeated()//Returns numSeated
 	{
 		return numSeated;
+	}
+	public int getOpenSeats()//Returns openSeats
+	{
+		for(int i = 0; i<seated.length;i++)
+		{
+			if(seated[i] == -1)
+			{
+				openSeats++;
+			}
+		}
+		return openSeats;	
+	}
+	
+	public boolean isSeniorAtTable()//Checks if a senior is present at a table
+	{
+		for(int i = 0; i<seated.length;i++)
+		{
+			if(seated[i] == 0)
+			{
+				return true;
+			}
+		}
+		return false;	
 	}
 	
 	
