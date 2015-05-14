@@ -6,12 +6,18 @@
 public class Table
 {
 	private boolean hasSenior;
-	private int seated;
-	private Table [] studentTables;
+	private int numSeated;
+	private int[] seated = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
+	
 	public Table(boolean senior)
 	{
 		hasSenior = senior;
-		if (hasSenior) seated = 1; else seated = 0;
+		if (hasSenior)
+		{
+			numSeated = 1;
+			seated[0] = 0;
+		}
+		else numSeated = 0;
 	}
 	
 	public boolean getHasSenior()
@@ -19,9 +25,9 @@ public class Table
 		return hasSenior;
 	}
 	
-	public int getSeated()
+	public int getNumSeated()
 	{
-		return seated;
+		return numSeated;
 	}
 	
 	
