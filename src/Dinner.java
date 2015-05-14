@@ -11,7 +11,7 @@ public class Dinner
 		Scanner steve = new Scanner(System.in);
 		Table[] tables; // Contains all tables
 		int numSeniors, numUnder; // Number of seniors, number of non-seniors
-		int tablesNeeded; // Number of tables needed to seat everyone
+		int tablesNeeded = 0; // Number of tables needed to seat everyone
 		
 		System.out.print("How many seniors? "); // Gets numSeniors
 		numSeniors = steve.nextInt();
@@ -20,9 +20,9 @@ public class Dinner
 		
 		tablesNeeded += numSeniors; // Counts a table for each senior
 		
-		if (numUnder / 7 > tables.length)
+		if (numUnder / 7 > tablesNeeded)
 		{
-			tablesNeeded += (numUnder / 7) - tables.length; // Counts more tables as needed for non-seniors
+			tablesNeeded += (numUnder / 7) - tablesNeeded; // Counts more tables as needed for non-seniors
 		}
 		
 		tables = new Table[tablesNeeded];
