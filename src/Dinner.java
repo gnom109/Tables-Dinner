@@ -1,7 +1,7 @@
 /*
  * Logan Pulley
  * Jordain Sharma
- * v0.1 Alpha
+ * v0.2 Alpha
  */
 import java.util.*;
 public class Dinner

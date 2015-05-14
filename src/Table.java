@@ -1,13 +1,13 @@
 /*
  * Logan Pulley
  * Jordain Sharma
- * v0.1 Alpha
+ * v0.2 Alpha
  */
 public class Table
 {
 	private boolean hasSenior;
 	private int seated;
-	
+	private int [] studentTable = new int[8];
 	public Table(boolean senior)
 	{
 		hasSenior = senior;
