@@ -7,7 +7,7 @@ public class Table
 {
 	private boolean hasSenior;
 	private int seated;
-	private int [] studentTable = new int[8];
+	private Table [] studentTables;
 	public Table(boolean senior)
 	{
 		hasSenior = senior;
@@ -23,4 +23,6 @@ public class Table
 	{
 		return seated;
 	}
+	
+	
 }
