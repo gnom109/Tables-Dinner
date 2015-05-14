@@ -1,6 +1,7 @@
 /*
  * Logan Pulley
  * Jordain Sharma
+ * v0.1 Alpha
  */
 public class Table
 {
