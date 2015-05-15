@@ -12,10 +12,29 @@ public class Table
 	private int numSeated;
 	private int openSeats;
 	//private int[] seated = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
-	private List<Person> seated = new  ArrayList<Person>();
+	private ArrayList<Person> seated = new  ArrayList<Person>();
 	public Table()//Table constructor
 	{
 
+		
+	}
+	
+	public boolean seat(Person p)
+	{
+		seated.add(p);
+		if(seated.size() == 8)
+		{
+			return false;
+		}
+		return true;
+	}
+	
+	public void clear()
+	{
+			for(int i = 0;i<seated.size();i++)
+		{
+			seated.remove(i);
+		}
 	}
 	
 	public int getNumSeated()//Returns numSeated
@@ -24,19 +43,13 @@ public class Table
 	}
 	public int getOpenSeats()//Returns openSeats
 	{
-		for(int i = 0; i<seated.size;i++)
-		{
-			if(seated[i] == -1)
-			{
-				openSeats++;
-			}
-		}
+		openSeats = seated.size();
 		return openSeats;	
 	}
 	
 	public boolean isSeniorAtTable()//Checks if a senior is present at a table
 	{
-		if (seated[0] == 0) return true; else return false;
+		if (seated.get(i) == 0) return true; else return false;
 	}
 	
 	public void printTablesToText()
@@ -49,7 +62,7 @@ public class Table
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.setOut(print);
+		//System.setOut(print);
 
 		
 	}
