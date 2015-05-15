@@ -13,6 +13,7 @@ public class Dinner
 		int numSeniors, numUnder; // Number of seniors, number of non-seniors
 		int tablesNeeded = 0; // Number of tables needed to seat everyone
 		
+		System.out.println("DINNER SEATING PROGRAM");
 		System.out.print("How many seniors? "); // Gets numSeniors
 		numSeniors = steve.nextInt();
 		System.out.print("How many other students? "); // Gets numUnder
@@ -30,5 +31,10 @@ public class Dinner
 		{
 			if (i < numSeniors) tables[i] = new Table(true); else tables[i] = new Table(false);
 		}
+	}
+	
+	public Person[][] seat()
+	{
+		
 	}
 }
