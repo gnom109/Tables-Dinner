@@ -19,6 +19,11 @@ public class Table
 		
 	}
 	
+	public void meet()
+	{
+		
+	}
+	
 	public boolean seat(Person p)
 	{
 		seated.add(p);
