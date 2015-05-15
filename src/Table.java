@@ -1,4 +1,6 @@
+import java.awt.List;
 import java.io.*;
+import java.util.*;
 
 /*
  * Logan Pulley
@@ -9,14 +11,11 @@ public class Table
 {
 	private int numSeated;
 	private int openSeats;
-	private int[] seated = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
-	
-	public Table(boolean senior)//Table constructor
+	//private int[] seated = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
+	private List<Person> seated = new  ArrayList<Person>();
+	public Table()//Table constructor
 	{
-		if (senior)
-		{
-			seated[0] = 0;
-		}
+
 	}
 	
 	public int getNumSeated()//Returns numSeated
@@ -25,7 +24,7 @@ public class Table
 	}
 	public int getOpenSeats()//Returns openSeats
 	{
-		for(int i = 0; i<seated.length;i++)
+		for(int i = 0; i<seated.size;i++)
 		{
 			if(seated[i] == -1)
 			{
