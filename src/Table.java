@@ -31,10 +31,7 @@ public class Table
 	
 	public void clear()
 	{
-			for(int i = 0;i<seated.size();i++)
-		{
-			seated.remove(i);
-		}
+		seated.clear();
 	}
 	
 	public int getNumSeated()//Returns numSeated
