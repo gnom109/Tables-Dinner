@@ -42,7 +42,7 @@ public class Dinner
 		tables = new Table[tablesNeeded];
 		for (int i = 0; i < tables.length; i++)
 		{
-			if (i < unders.length) tables[i] = new Table(true); else tables[i] = new Table(false);
+			tables[i] = new Table();
 		}
 	}
 	
@@ -50,7 +50,20 @@ public class Dinner
 	{
 		for (int i = 0; i < seniors.length; i++)
 		{
-			
+			tables[i].seat(seniors[i]);
+		}
+		
+		for (int i = 0; i < unders.length; i++)
+		{
+			tables[i % tables.length].seat(unders[i]);
+		}
+	}
+	
+	public void clearTables()
+	{
+		for (int i = 0; i < tables.length; i++)
+		{
+			tables[i].clear();
 		}
 	}
 }
