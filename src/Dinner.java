@@ -55,7 +55,7 @@ public class Dinner
 		
 		for (int i = 0; i < unders.length; i++)
 		{
-			tables[i % tables.length].seat(unders[i]);
+			if (tables[i % tables.length].seat(unders[i]) == false) System.out.println("ERROR: SEATING OVERFLOW");
 		}
 	}
 	
