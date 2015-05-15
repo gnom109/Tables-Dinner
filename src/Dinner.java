@@ -6,11 +6,14 @@
 import java.util.*;
 public class Dinner
 {
+	private static Table[] tables; // Contains all tables
+	private static Person[] seniors, unders;
+	private static Scanner steve = new Scanner(System.in);
+	
 	public static void main(String[] args)
 	{
-		Scanner steve = new Scanner(System.in);
-		Table[] tables; // Contains all tables
-		Person[] seniors, unders;
+		
+		
 		int tablesNeeded = 0; // Number of tables needed to seat everyone
 		
 		System.out.println("DINNER SEATING PROGRAM");
@@ -45,6 +48,9 @@ public class Dinner
 	
 	public void seatPersons()
 	{
-		for ()
+		for (int i = 0; i < seniors.length; i++)
+		{
+			
+		}
 	}
 }
