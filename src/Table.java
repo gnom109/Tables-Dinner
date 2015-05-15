@@ -22,6 +22,7 @@ public class Table
 	public boolean seat(Person p)
 	{
 		seated.add(p);
+		p.addSeated(this);
 		if(seated.size() == 8)
 		{
 			return false;
