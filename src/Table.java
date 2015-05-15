@@ -1,3 +1,5 @@
+import java.io.*;
+
 /*
  * Logan Pulley
  * Jordain Sharma
@@ -36,6 +38,21 @@ public class Table
 	public boolean isSeniorAtTable()//Checks if a senior is present at a table
 	{
 		if (seated[0] == 0) return true; else return false;
+	}
+	
+	public void printTablesToText()
+	{
+		PrintStream print;
+		try {
+			print = new PrintStream(new FileOutputStream("output.txt"));
+			System.setOut(print);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.setOut(print);
+
+		
 	}
 	
 	
